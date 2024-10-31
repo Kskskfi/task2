@@ -49,11 +49,14 @@
 form {
     background-color: rgba(19, 19, 23, 0.95);
     max-width: 43vh;
-    margin: 30px auto;
+    margin: 15px auto;
     padding: 33px;
 
     border-radius: 50px;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+}
+.errorlist > li{
+    color: #fbfbfb;
 }
 form > p {
     color: #fbfbfb;
