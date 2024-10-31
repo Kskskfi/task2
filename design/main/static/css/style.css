@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Cascadia Mono SemiBold";
+}
+.form{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../img/back.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 95vh;
+    background-color: rgba( 0, 0, 0, 0.5);
+
+}
+.home{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../img/back.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-color: rgba( 0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.auth{
+    background-color: rgba(19, 19, 23, 0.90);
+    width: 43vh;
+    height: 15vh;
+    text-align: center;
+    border-radius: 30px;
+    color: #fbfbfb;
+    padding: 10px;
+    form {padding: 0;}
+    button[type="submit"] {width: 50%}
+}
+
+.auth > a{
+    font-size: 3vh;
+    font-weight: bold;
+    line-height: 15vh;
+    color: #fbfbfb;
+    margin: 0 10px;
+}
+.auth > a:hover{
+    color: #a1a1a1;
+}
+form {
+    background-color: rgba(19, 19, 23, 0.95);
+    max-width: 43vh;
+    margin: 30px auto;
+    padding: 33px;
+
+    border-radius: 50px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+}
+form > p {
+    color: #fbfbfb;
+
+}
+form > p > input {
+    color: #fbfbfb;
+}
+h1{
+    background-color: #131317;
+    padding: 10px;
+}
+h1 > a{
+    color: #fbfbfb;
+    font-size: 2vw;
+}
+h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #fbfbfb;
+    font-size: 4vh;
+    padding-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+    width: calc(100% - 25px);
+    height: 23px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 2px solid #393838;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #26262b;
+}
+
+
+
+/* Кнопка отправки */
+button[type="submit"] {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: #fbfbfb;
+    color: #000000;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-color: #333333;
+}
+
+button[type="submit"]:hover {
+    background-color: rgba(255, 255, 255, 0.59);
+}
+
+
+

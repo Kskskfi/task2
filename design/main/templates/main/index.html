@@ -2,14 +2,19 @@
 
   {% block content %}
 
+    <div class="home">
+        <div class="auth">
     {% if user.is_authenticated %}
-        <p>Hello, {{ user.username }}!</p>
+        <h2>Привет, {{ user.username }}!</h2>
         <form action="{% url 'logout' %}" method="post" style="display:inline;">
             {% csrf_token %}
             <button type="submit">Выйти</button>
         </form>
     {% else %}
-        <a href="{% url 'login' %}">Login</a> | <a href="{% url 'register' %}">Register</a>
-    {% endif %}
+        <a href="{% url 'login' %}">Войти</a>
 
+        <a href="{% url 'register' %}">Регистрация</a>
+    {% endif %}
+        </div>
+    </div>
   {% endblock %}
