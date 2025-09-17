@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+{% block content %} 
+<h2>Мои заявки</h2> 
+<form method="get"> 
+    <label for="status">Фильтр по статусу:</label> 
+    <select name="status" id="status"> 
+        <option value="">Все</option> 
+        {% for choice, choice_name in status_choices %} 
+            <option value="{{ choice }}" {% if request.GET.status == choice %} selected {% endif %}>{{ choice_name }}</option> 
+        {% endfor %} 
+    </select> 
+    <button type="submit">Фильтровать</button> 
+</form> 
+<div class="requests-list"> 
+    {% for request in requests %} 
+    <div class="request-card"> 
+        <p><strong>Дата создания:</strong> {{ request.created_at }}</p> 
+        <p><strong>Название:</strong> {{ request.title }}</p> 
+        <p><strong>Описание:</strong> {{ request.description }}</p> 
+        <p><strong>Категория:</strong> {{ request.category }}</p> 
+        <p><strong>Статус:</strong> {{ request.status }}</p> 
+        {% if request.status == 'Новая' or user.is_superuser %} 
+        <a href="{% url 'delete_request' request.pk %}">Удалить</a> 
+        {% endif %} 
+    </div> 
+    {% endfor %} 
+</div> 
+{% endblock %} 

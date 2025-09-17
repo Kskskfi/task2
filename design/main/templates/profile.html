@@ -1,0 +1,10 @@
+{% extends 'base.html' %} 
+{% block content %} 
+        <div class="buttons"> 
+            <div class="user-buttons"> 
+            <h2 class="welcome">Добро пожаловать, {{ user.username }}!</h2> 
+            <a href="{% url 'create_request' %}"><button>Создать заявку</button></a> 
+            <a href="{% url 'view_requests' %}"><button>Посмотреть все заявки</button></a> 
+            </div> 
+        </div> 
+{% endblock %} 
