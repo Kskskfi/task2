@@ -19,9 +19,17 @@
         <p><strong>Описание:</strong> {{ request.description }}</p> 
         <p><strong>Категория:</strong> {{ request.category }}</p> 
         <p><strong>Статус:</strong> {{ request.status }}</p> 
-        {% if request.status == 'Новая' or user.is_superuser %} 
-        <a href="{% url 'delete_request' request.pk %}">Удалить</a> 
-        {% endif %} 
+        {% if user.is_superuser %}
+            {% if request.status == 'Принято в работу' %}
+                <a href="{% url 'update_request_status' request.pk %}">Изменить статус</a>
+                <a href="{% url 'delete_request' request.pk %}">Удалить</a>
+            {% elif request.status == 'Новая' %}
+                <a href="{% url 'update_request_status' request.pk %}">Изменить статус</a>
+                <a href="{% url 'delete_request' request.pk %}">Удалить</a>
+            {% else %}
+                <p>Заявка выполнена, изменть нельзя</p>
+            {% endif %}
+        {% endif %}
     </div> 
     {% endfor %} 
 </div> 

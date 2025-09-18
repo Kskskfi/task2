@@ -3,118 +3,530 @@
     padding: 0;
     text-decoration: none;
     font-family: "Cascadia Mono SemiBold";
+    box-sizing: border-box;
 }
-.form{
-    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../img/back.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 95vh;
-    background-color: rgba( 0, 0, 0, 0.5);
 
+body {
+    line-height: 1.6;
+    color: #e0e0e0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    min-height: 100vh;
+    padding: 20px;
 }
-.home{
-    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../img/back.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    background-color: rgba( 0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.auth{
-    background-color: rgba(19, 19, 23, 0.90);
-    width: 43vh;
-    height: 15vh;
+
+/* Заголовок */
+h1 {
     text-align: center;
-    border-radius: 30px;
-    color: #fbfbfb;
-    padding: 10px;
-    form {padding: 0;}
-    button[type="submit"] {width: 50%}
+    color: #fff;
+    margin-bottom: 30px;
+    padding: 25px 0;
+    background: rgba(40, 40, 40, 0.9);
+    border-radius: 15px;
+    border: 2px solid #000;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-.auth > a{
-    font-size: 3vh;
-    font-weight: bold;
-    line-height: 15vh;
-    color: #fbfbfb;
-    margin: 0 10px;
+h1 a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+    font-size: 2.5em;
+    font-weight: 300;
 }
-.auth > a:hover{
-    color: #a1a1a1;
-}
-form {
-    background-color: rgba(19, 19, 23, 0.95);
-    max-width: 43vh;
-    margin: 15px auto;
-    padding: 33px;
 
-    border-radius: 50px;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+h1 a:hover {
+    color: #b3b3b3;
 }
-.errorlist > li{
-    color: #fbfbfb;
-}
-form > p {
-    color: #fbfbfb;
 
+/* Контейнеры */
+.home {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
-form > p > input {
-    color: #fbfbfb;
+
+.content {
+    background: rgba(45, 45, 45, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    border: 2px solid #000;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin: 30px auto;
+    max-width: 800px;
 }
-h1{
-    background-color: #131317;
-    padding: 10px;
-}
-h1 > a{
-    color: #fbfbfb;
-    font-size: 2vw;
-}
-h2 {
-    padding-top: 10px;
+
+/* Блок авторизации */
+.auth {
+    background: rgba(40, 40, 40, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid #000;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
     text-align: center;
-    color: #fbfbfb;
-    font-size: 4vh;
-    padding-bottom: 10px;
+    color: #fff;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"]{
-    width: calc(100% - 25px);
-    height: 23px;
+.auth h2 {
     margin-bottom: 15px;
-    margin-top: 10px;
-    padding: 5px 10px;
-    border: 2px solid #393838;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background-color: #26262b;
+    color: #fff;
+    font-weight: 300;
 }
 
+.auth h2 a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #666;
+}
 
+.auth h2 a:hover {
+    color: #b3b3b3;
+    background: rgba(0, 0, 0, 0.5);
+}
 
-/* Кнопка отправки */
-button[type="submit"] {
-    margin-top: 15px;
-    width: 100%;
-    padding: 10px;
-    background-color: #fbfbfb;
-    color: #000000;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
+/* Формы */
+.form {
+    background: rgba(45, 45, 45, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    border: 2px solid #000;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin: 30px auto;
+    max-width: 500px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form p {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    padding: 15px;
+    border: 2px solid #000;
+    border-radius: 8px;
     font-size: 16px;
-    font-weight: bold;
-    border-color: #333333;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    background: #333;
+    color: #fff;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #666;
+    box-shadow: 0 0 10px rgba(102, 102, 102, 0.3);
+}
+
+input::placeholder {
+    color: #999;
+}
+
+/* Кнопки */
+button, .auth a, .custom-file-upload {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 8px;
+    text-decoration: none;
+    border: 2px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    min-width: 120px;
+    background: #333;
+    color: #fff;
+}
+
+/* Стили кнопок по типам */
+button[type="submit"] {
+    background: #000;
+    color: #fff;
 }
 
 button[type="submit"]:hover {
-    background-color: rgba(255, 255, 255, 0.59);
+    background: #1a1a1a;
+    border-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
+button[type="button"] {
+    background: #444;
+    color: #fff;
+    border-color: #444;
+}
 
+button[type="button"]:hover {
+    background: #555;
+    border-color: #555;
+    transform: translateY(-2px);
+}
 
+.auth a {
+    background: #222;
+    color: #fff;
+    border-color: #222;
+}
+
+.auth a:hover {
+    background: #333;
+    border-color: #333;
+    transform: translateY(-2px);
+}
+
+/* Кнопка выхода - выделим ее */
+form button[type="submit"] {
+    background: #d32f2f;
+    border-color: #b71c1c;
+}
+
+form button[type="submit"]:hover {
+    background: #b71c1c;
+    border-color: #8b0000;
+}
+
+/* Кастомная загрузка файлов */
+.custom-file-upload {
+    background: #555;
+    color: #fff;
+    border-color: #555;
+    cursor: pointer;
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.custom-file-upload:hover {
+    background: #666;
+    border-color: #666;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#file-name {
+    margin-left: 10px;
+    color: #b3b3b3;
+    font-style: italic;
+}
+
+/* Карточки */
+.request-card, .category-card {
+    background: #333;
+    padding: 25px;
+    margin: 15px 0;
+    border-radius: 12px;
+    border: 2px solid #000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.request-card:hover, .category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.request-card p, .category-card p {
+    margin: 8px 0;
+    color: #e0e0e0;
+}
+
+.request-card strong {
+    color: #fff;
+}
+
+/* Списки */
+.requests-list, .categories-list {
+    margin-top: 30px;
+}
+
+.recent-requests {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.request-item {
+    background: #333;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Изображения */
+.design-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+    border: 2px solid #000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Профиль */
+.buttons {
+    text-align: center;
+    padding: 40px;
+}
+
+.welcome {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 2em;
+    font-weight: 300;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.user-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.user-buttons button {
+    background: #000;
+    color: #fff;
+    border: 2px solid #333;
+    padding: 20px 40px;
+    font-size: 18px;
+    border-radius: 12px;
+}
+
+.user-buttons button:hover {
+    background: #1a1a1a;
+    border-color: #555;
+    transform: translateY(-3px);
+}
+
+/* Фильтры */
+form[method="get"] {
+    background: rgba(40, 40, 40, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+form[method="get"] label {
+    margin: 0;
+    color: #fff;
+}
+
+form[method="get"] select {
+    flex: 1;
+    min-width: 200px;
+    background: #333;
+    color: #fff;
+    border: 2px solid #000;
+}
+
+/* Ссылки в карточках */
+.request-card a, .category-card a {
+    display: inline-block;
+    margin: 10px 15px 0 0;
+    padding: 8px 16px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    border: 2px solid #333;
+    transition: all 0.3s ease;
+}
+
+.request-card a:hover, .category-card a:hover {
+    background: #1a1a1a;
+    border-color: #555;
+    transform: translateY(-2px);
+}
+
+/* Сообщения */
+p:empty {
+    display: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .home {
+        padding: 10px;
+    }
+
+    .content, .form {
+        padding: 25px;
+        margin: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+        padding: 20px 0;
+    }
+
+    .welcome {
+        font-size: 1.5em;
+    }
+
+    .user-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-buttons button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    form[method="get"] {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    button, .auth a {
+        padding: 12px 20px;
+        font-size: 14px;
+        min-width: 100px;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content, .form, .request-card, .category-card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Специфические стили для разных статусов */
+.request-card[data-status="Выполнено"] {
+    border-left: 4px solid #4caf50;
+}
+
+.request-card[data-status="Принято в работу"] {
+    border-left: 4px solid #ff9800;
+}
+
+.request-card[data-status="Новая"] {
+    border-left: 4px solid #2196f3;
+}
+
+/* Скрытые поля */
+#image-field, #comment-field {
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+#image-field.show, #comment-field.show {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 200px;
+    }
+}
+
+/* Заголовки */
+h2, h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h3 {
+    font-size: 1.5em;
+    margin: 30px 0 20px 0;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Текст */
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #b3b3b3;
+}
+
+/* Состояния */
+button:disabled {
+    background: #555;
+    border-color: #777;
+    color: #888;
+    cursor: not-allowed;
+    transform: none;
+}
+
+button:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Дополнительные элементы */
+.recent-requests h3,
+.requests-list h2,
+.categories-list h2 {
+    background: rgba(40, 40, 40, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #000;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Разделители */
+hr {
+    border: none;
+    border-top: 2px solid #333;
+    margin: 20px 0;
+}

@@ -1,20 +1,25 @@
-{%extends 'base.html' %}
+{% extends 'base.html' %}
 
-  {% block content %}
+{% block content %}
 
-    <div class="home">
-        <div class="auth">
-    {% if user.is_authenticated %}
-        <h2>Привет, {{ user.username }}!</h2>
-        <form action="{% url 'logout' %}" method="post" style="display:inline;">
-            {% csrf_token %}
-            <button type="submit">Выйти</button>
-        </form>
-    {% else %}
-        <a href="{% url 'login' %}">Войти</a>
+    <h2>Добро пожаловать в DesignPro</h2>
 
-        <a href="{% url 'register' %}">Регистрация</a>
-    {% endif %}
-        </div>
+    <h3>Последние выполненные заявки</h3>
+    <div class="recent-requests">
+        {% for request in recent_completed_requests %}
+            <div class="request-item">
+                <p>Название: {{ request.title }}</p>
+                <p>Категория: {{ request.category }}</p>
+                <img src="{{ request.image.url }}" alt="design" class="design-image">
+                <img src="{{ request.design_image.url }}" alt="updateDesign" class="design-image">
+                <p>Дата добавления: {{ request.created_at }}</p>
+            </div>
+        {% empty %}
+            <p>Нет выполненных заявок.</p>
+        {% endfor %}
     </div>
-  {% endblock %}
+
+    <h3>Количество заявок в статусе «Принято в работу»</h3>
+    <p>{{ in_progress_count }}</p>
+
+{% endblock %}
